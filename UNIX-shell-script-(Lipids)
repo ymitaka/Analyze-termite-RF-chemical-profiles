@@ -38,3 +38,4 @@ cat "MS2_full_list_Midgut_content_W7_(Lipids).txt" | awk '{print substr($0, inde
 
 # All precursor ions are merged and output to a text file
 cat "Midgut6PK_lip_MS2.txt" "Midgut7PK_lip_MS2.txt" "Midgut6SQ_lip_MS2.txt" "Midgut7SQ_lip_MS2.txt" "Midgut6Sol_lip_MS2.txt" "Midgut7Sol_lip_MS2.txt" "Midgut6W_lip_MS2.txt" "Midgut7W_lip_MS2.txt" | sort | awk '!a[$0]++' > MidgutAll_lip.txt
+
