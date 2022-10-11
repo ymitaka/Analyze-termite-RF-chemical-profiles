@@ -20,19 +20,19 @@ cat "RF6SQ_lip_MS2.txt" "RF7SQ_lip_MS2.txt" | sort | uniq -d  > RFtoSQ_lip.txt
 
 # Output the lists of (product-ion-detected) precursor ions in midgut contents of each caste of each colony
 
-# King_midgut_contents
+# King midgut contents
 cat "MS2_full_list_Midgut_content_PK6_(Lipids).txt" | awk '{print substr($0, index($0, "MS2 precursor "))}' | ggrep "precursor" | awk '!a[$0]++' | awk '{sub("MS2 precursor ", ""); print $0}' > Midgut6PK_lip_MS2.txt
 cat "MS2_full_list_Midgut_content_PK7_(Lipids).txt" | awk '{print substr($0, index($0, "MS2 precursor "))}' | ggrep "precursor" | awk '!a[$0]++' | awk '{sub("MS2 precursor ", ""); print $0}' > Midgut7PK_lip_MS2.txt
 
-# Queen_midgut_contents
+# Queen midgut contents
 cat "MS2_full_list_Midgut_content_SQ6_(Lipids).txt" | awk '{print substr($0, index($0, "MS2 precursor "))}' | ggrep "precursor" | awk '!a[$0]++' | awk '{sub("MS2 precursor ", ""); print $0}' > Midgut6SQ_lip_MS2.txt
 cat "MS2_full_list_Midgut_content_SQ7_(Lipids).txt" | awk '{print substr($0, index($0, "MS2 precursor "))}' | ggrep "precursor" | awk '!a[$0]++' | awk '{sub("MS2 precursor ", ""); print $0}' > Midgut7SQ_lip_MS2.txt
 
-# Soldier_midgut_contents
+# Soldier midgut contents
 cat "MS2_full_list_Midgut_content_Sol6_(Lipids).txt" | awk '{print substr($0, index($0, "MS2 precursor "))}' | ggrep "precursor" | awk '!a[$0]++' | awk '{sub("MS2 precursor ", ""); print $0}' > Midgut6Sol_lip_MS2.txt
 cat "MS2_full_list_Midgut_content_Sol7_(Lipids).txt" | awk '{print substr($0, index($0, "MS2 precursor "))}' | ggrep "precursor" | awk '!a[$0]++' | awk '{sub("MS2 precursor ", ""); print $0}' > Midgut7Sol_lip_MS2.txt
 
-# Worker_midgut_content
+# Worker midgut content
 cat "MS2_full_list_Midgut_content_W6_(Lipids).txt" | awk '{print substr($0, index($0, "MS2 precursor "))}' | ggrep "precursor" | awk '!a[$0]++' | awk '{sub("MS2 precursor ", ""); print $0}' > Midgut6W_lip_MS2.txt
 cat "MS2_full_list_Midgut_content_W7_(Lipids).txt" | awk '{print substr($0, index($0, "MS2 precursor "))}' | ggrep "precursor" | awk '!a[$0]++' | awk '{sub("MS2 precursor ", ""); print $0}' > Midgut7W_lip_MS2.txt
 
