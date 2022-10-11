@@ -13,7 +13,9 @@
 
 <h3>How to use</h3>
 
-<h4>STEP 1. Making the lists of candidates for KF- or QF-specific precursor ions with product ions detected </h4>
-&ensp;&ensp; Using .text files
+<h4>STEP 1. Merging the lists of candidates for product-ion-detected (MS2-detected) precursor ions</h4>
+&ensp;&ensp; First, download all the .R files and folders in this repository, open a Terminal.app on your mac (on Windows, use another suitable app) and set the directory to the "MS2-detected-lipid-lists" folder. Subsequently, run the shell scripts written in "UNIX-shell-script-(Lipids)" file to output new text files named "RFtoPK_lip.txt", "RFtoSQ_lip.txt", and "MidgutAll_lip.txt". "RFtoPK_lip.txt" and "RFtoSQ_lip.txt" contain the list of MS2-detected precursor ions common among termite colonies in KF and QF, respectively. "MidgutAll_lip.txt" contains the list of all MS2-detected precursor ions in midgut contents of all castes of all colonies. <br>
+&ensp;&ensp; Perform the same operation for peptide ion candidates.
 
-a group of .txt files containing a list of precursor ions that could be detected up to product ion in each sample that were output separately are required. 
+<h4>STEP 2. Generate plots and heatmaps</h4>
+&ensp;&ensp; 
