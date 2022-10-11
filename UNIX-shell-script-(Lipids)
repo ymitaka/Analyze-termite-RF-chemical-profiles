@@ -1,0 +1,40 @@
+# Making the lists of candidates for lipid profiles of royal foods (king food and queen food)
+
+# Output the lists of (product-ion-detected) precursor ions in king food and quuen food of each colony
+
+# King food
+cat "MS2_full_list_Royal_food_to_PK6_(Lipids).txt" | awk '{print substr($0, index($0, "MS2 precursor "))}' | ggrep "precursor" | awk '!a[$0]++' | awk '{sub("MS2 precursor ", ""); print $0}' > RF6PK_lip_MS2.txt
+cat "MS2_full_list_Royal_food_to_PK7_(Lipids).txt" | awk '{print substr($0, index($0, "MS2 precursor "))}' | ggrep "precursor" | awk '!a[$0]++' | awk '{sub("MS2 precursor ", ""); print $0}' > RF7PK_lip_MS2.txt
+
+# Queen food
+cat "MS2_full_list_Royal_food_to_SQ6_(Lipids).txt" | awk '{print substr($0, index($0, "MS2 precursor "))}' | ggrep "precursor" | awk '!a[$0]++' | awk '{sub("MS2 precursor ", ""); print $0}' > RF6SQ_lip_MS2.txt
+cat "MS2_full_list_Royal_food_to_SQ7_(Lipids).txt" | awk '{print substr($0, index($0, "MS2 precursor "))}' | ggrep "precursor" | awk '!a[$0]++' | awk '{sub("MS2 precursor ", ""); print $0}' > RF7SQ_lip_MS2.txt
+
+# Only precursor ions common among colonies are extracted and output to a text file
+cat "RF6PK_lip_MS2.txt" "RF7PK_lip_MS2.txt" | sort | uniq -d  > RFtoPK_lip.txt
+cat "RF6SQ_lip_MS2.txt" "RF7SQ_lip_MS2.txt" | sort | uniq -d  > RFtoSQ_lip.txt
+
+
+
+# Making the lists of candidates for lipid profiles of midgut contents of kings, queens, soldiers, and workers
+
+# Output the lists of (product-ion-detected) precursor ions in midgut contents of each caste of each colony
+
+# King_midgut_contents
+cat "MS2_full_list_Midgut_content_PK6_(Lipids).txt" | awk '{print substr($0, index($0, "MS2 precursor "))}' | ggrep "precursor" | awk '!a[$0]++' | awk '{sub("MS2 precursor ", ""); print $0}' > Midgut6PK_lip_MS2.txt
+cat "MS2_full_list_Midgut_content_PK7_(Lipids).txt" | awk '{print substr($0, index($0, "MS2 precursor "))}' | ggrep "precursor" | awk '!a[$0]++' | awk '{sub("MS2 precursor ", ""); print $0}' > Midgut7PK_lip_MS2.txt
+
+# Queen_midgut_contents
+cat "MS2_full_list_Midgut_content_SQ6_(Lipids).txt" | awk '{print substr($0, index($0, "MS2 precursor "))}' | ggrep "precursor" | awk '!a[$0]++' | awk '{sub("MS2 precursor ", ""); print $0}' > Midgut6SQ_lip_MS2.txt
+cat "MS2_full_list_Midgut_content_SQ7_(Lipids).txt" | awk '{print substr($0, index($0, "MS2 precursor "))}' | ggrep "precursor" | awk '!a[$0]++' | awk '{sub("MS2 precursor ", ""); print $0}' > Midgut7SQ_lip_MS2.txt
+
+# Soldier_midgut_contents
+cat "MS2_full_list_Midgut_content_Sol6_(Lipids).txt" | awk '{print substr($0, index($0, "MS2 precursor "))}' | ggrep "precursor" | awk '!a[$0]++' | awk '{sub("MS2 precursor ", ""); print $0}' > Midgut6Sol_lip_MS2.txt
+cat "MS2_full_list_Midgut_content_Sol7_(Lipids).txt" | awk '{print substr($0, index($0, "MS2 precursor "))}' | ggrep "precursor" | awk '!a[$0]++' | awk '{sub("MS2 precursor ", ""); print $0}' > Midgut7Sol_lip_MS2.txt
+
+# Worker_midgut_content
+cat "MS2_full_list_Midgut_content_W6_(Lipids).txt" | awk '{print substr($0, index($0, "MS2 precursor "))}' | ggrep "precursor" | awk '!a[$0]++' | awk '{sub("MS2 precursor ", ""); print $0}' > Midgut6W_lip_MS2.txt
+cat "MS2_full_list_Midgut_content_W7_(Lipids).txt" | awk '{print substr($0, index($0, "MS2 precursor "))}' | ggrep "precursor" | awk '!a[$0]++' | awk '{sub("MS2 precursor ", ""); print $0}' > Midgut7W_lip_MS2.txt
+
+# All precursor ions are merged and output to a text file
+cat "Midgut6PK_lip_MS2.txt" "Midgut7PK_lip_MS2.txt" "Midgut6SQ_lip_MS2.txt" "Midgut7SQ_lip_MS2.txt" "Midgut6Sol_lip_MS2.txt" "Midgut7Sol_lip_MS2.txt" "Midgut6W_lip_MS2.txt" "Midgut7W_lip_MS2.txt" | sort | awk '!a[$0]++' > MidgutAll_lip.txt
