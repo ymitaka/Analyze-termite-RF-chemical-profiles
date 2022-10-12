@@ -8,15 +8,21 @@
 
 <h3>Preparation in advance</h3>
 
-&ensp;&ensp; As a preliminary preparation, a group of .txt files beggining with the name "Lipid spectra list MS1 ~" (lipid data) or "Specta list MS1 ~" (peptide data), which contain the analysis results of each sample exported from mzMine2 software, is also required. These .txt files are registered in DDBJ MetaboBank (BioProject: PRJDB14286, ). So, please download not only all the .R files and folders (beggining with the name "MS2-detected~") in this repository but also the .txt files containing LC-MS/MS analysis results from DDBJ server, and then save these files/folders in the same single folder. <br>
+&ensp;&ensp; As a preliminary preparation, a group of .txt files beggining with the name "Lipid spectra list MS1" (lipid data) or "Specta list MS1" (peptide data), which contains the analysis results of each sample exported from mzMine2 software, is also required. These .txt files are registered in DDBJ MetaboBank (BioProject: PRJDB14286, ). So, please download not only all the .R files and folders (beggining with the name "MS2-detected") in this repository but also the .txt files containing LC-MS/MS analysis results from DDBJ server, and then save these files/folders in the same single folder. <br>
 &ensp;&ensp; In this automatic analyses, you will need to use UNIX shell scripts and R software (<a href="https://www.r-project.org/">The R project for Statistical Computing</a>). To run the shell scripts, you will need to install GNU grip (ggrep) by means of Homebrew on Terminal.app (for Mac/Linux users) or on other suitable software (for Windows users). Also, to run the R codes, you will need to install four additional packages "dplyr", "reshape2", "ggplot2", and "gplots" on your computer. 
 <br><br>
 
 <h3>How to use</h3>
 
-<h4>STEP 1. Merging the lists of candidates for product-ion-detected (MS2-detected) precursor ions</h4>
-&ensp;&ensp; First, open a Terminal.app on your mac (on Windows, use another suitable app) and set the directory to the "MS2-detected-lipid-lists" folder. Subsequently, run the shell scripts written in "UNIX-shell-script-(Lipids)" file to output new text files named "RFtoPK_lip.txt", "RFtoSQ_lip.txt", and "MidgutAll_lip.txt". <br> RFtoPK_lip.txt and RFtoSQ_lip.txt contain the list of MS2-detected precursor ions common among termite colonies in KF and QF, respectively. MidgutAll_lip.txt contains the list of all MS2-detected precursor ions in midgut contents of all castes of all colonies. <br>
-&ensp;&ensp; Perform the same operation for peptide ion candidates.
+First, as an example, a plot and heat map will be created using lipid data.<br>
+<ol>
+<li>Open a Terminal.app on your mac (on Windows, use another suitable app) and set the directory to the "MS2-detected-lipid-lists" folder. Subsequently, run the shell scripts written in "UNIX-shell-script-(Lipids)" file to output new text files named "RFtoPK_lip.txt", "RFtoSQ_lip.txt", and "MidgutAll_lip.txt". (RFtoPK_lip.txt and RFtoSQ_lip.txt contain the lists of product-ion-detected (MS2-detected) precursor ions common among termite colonies in KF and QF, respectively. MidgutAll_lip.txt contains the list of all MS2-detected precursor ions in midgut contents of all castes of all colonies.)<br></li>
 
-<h4>STEP 2. Generate plots and heatmaps</h4>
-&ensp;&ensp; Move (or copy and paste) these 3 files (RFtoPK_lip.txt, RFtoSQ_lip.txt, and MidgutAll_lip.txt) to a folder one level above. 
+<li>Move (or copy and paste) these 3 files (RFtoPK_lip.txt, RFtoSQ_lip.txt, and MidgutAll_lip.txt) to a folder one level above. This folder should contain not only these three text files but also the .R files, and a group of text files downloaded from DDBJ, which contains lipid analysis results.<br></li>
+
+<li>Open "RF MC Lipid profile comparison (for Github).R" file and run the code in order from top to bottom. The execution of this code will save in a folder a group of csv files containing data sets in the intermediate stages of processing, as well as csv files containing data sets used directly for plotting and drawing heatmaps.<br></li>
+
+<li>A mean-EPI plot and a heatmap will be generated and displayed in a new window on the R software. Save them in PDF (or JPEG, PNG, and so on) format.</li>
+</ol>
+
+Perform the same operation for peptide ion candidates. <br>
