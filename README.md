@@ -9,7 +9,7 @@
 <h3>Preparation in advance</h3>
 
 &ensp;&ensp; As a preliminary preparation, a group of .txt files beggining with the name "Lipid spectra list MS1" (lipid data) or "Specta list MS1" (peptide data), which contains the analysis results of each sample exported from mzMine2 software, is also required. These .txt files are registered in DDBJ MetaboBank (BioProject: <b>PRJDB14286</b>, ). So, please download not only all the .R files and folders (beggining with the name "MS2-detected") in this repository but also the .txt files containing LC-MS/MS analysis results from DDBJ server, and then save these files/folders in the same single folder. <br>
-&ensp;&ensp; In this automatic analyses, you will need to use <b>UNIX shell scripts</b> and <b>R software</b> (<a href="https://www.r-project.org/" target="_blank">The R project for Statistical Computing</a>). To run the shell scripts, you will need to install GNU grip (ggrep) by means of Homebrew on Terminal.app (for Mac/Linux users) or on other suitable software (for Windows users). Also, to run the R codes, you will need to install four additional packages "dplyr", "reshape2", "ggplot2", and "gplots" on your computer. 
+&ensp;&ensp; In this automatic analyses, you will need to use <b>UNIX shell scripts</b> and <b>R software</b> (<a href="https://www.r-project.org/">The R project for Statistical Computing</a>). To run the shell scripts, you will need to install GNU grip (ggrep) by means of Homebrew on Terminal.app (for Mac/Linux users) or on other suitable software (for Windows users). Also, to run the R codes, you will need to install four additional packages "dplyr", "reshape2", "ggplot2", and "gplots" on your computer. 
 <br><br>
 
 <h3>How to use</h3>
