@@ -2,20 +2,21 @@
 
 <h3>Introduction</h3>
 
-&ensp;&ensp; These text and R command files are used for automatically comparing lipid or peptide profiles, which were analyzed by using LC-MS/MS, between king food (KF) and queen food (QF) or among midgut contents of kings, queens, soldiers, and workers in the Japanese subterranean termite <i>Reticulitermes speratus</i>. <br>
+&ensp;&ensp; These text and R code files are used for automatically comparing lipid or peptide profiles, which were analyzed by using LC-MS/MS, between king food (KF) and queen food (QF) or among midgut contents of kings, queens, soldiers, and workers in the Japanese subterranean termite <i>Reticulitermes speratus</i>. <br>
 &ensp;&ensp; The .R files included in this repository not only outputs a Mean-EPI (Excess proportion index) plot comparing the intensity of each ion in royal foods between KF and QF, but also a heatmap comparing the intensity of ions detected in midgut contents between castes, which are used in our research article (Eisuke et al. Under review). 
 <br><br>
 
 <h3>Preparation in advance</h3>
 
-&ensp;&ensp; As a preliminary preparation, a group of .raw format files containing the analysis results of each sample saved by Xcalibur (the LC-MS/MS control software, Thermo Fisher) is required. These .raw files are registered in DDBJ MetaboBank (BioProject: PRJDB14286, ), and therefore, please download these files before starting to use the codes in this repository. 
+&ensp;&ensp; As a preliminary preparation, a group of .txt files beggining with the name "Lipid spectra list MS1 ~" (lipid data) or "Specta list MS1 ~" (peptide data), which contain the analysis results of each sample exported from mzMine2 software, is also required. These .txt files are registered in DDBJ MetaboBank (BioProject: PRJDB14286, ). So, please download not only all the .R files and folders (beggining with the name "MS2-detected~") in this repository but also the .txt files containing LC-MS/MS analysis results from DDBJ server, and then save these files/folders in the same single folder. <br>
+&ensp;&ensp; In this automatic analyses, you will need to use UNIX shell scripts and R software (<a href="https://www.r-project.org/">The R project for Statistical Computing</a>). To run the shell scripts, you will need to install GNU grip (ggrep) by means of Homebrew on Terminal.app (for Mac/Linux users) or on other suitable software (for Windows users). Also, to run the R codes, you will need to install four additional packages "dplyr", "reshape2", "ggplot2", and "gplots" on your computer. 
 <br><br>
 
 <h3>How to use</h3>
 
 <h4>STEP 1. Merging the lists of candidates for product-ion-detected (MS2-detected) precursor ions</h4>
-&ensp;&ensp; First, download all the .R files and folders in this repository, open a Terminal.app on your mac (on Windows, use another suitable app) and set the directory to the "MS2-detected-lipid-lists" folder. Subsequently, run the shell scripts written in "UNIX-shell-script-(Lipids)" file to output new text files named "RFtoPK_lip.txt", "RFtoSQ_lip.txt", and "MidgutAll_lip.txt". "RFtoPK_lip.txt" and "RFtoSQ_lip.txt" contain the list of MS2-detected precursor ions common among termite colonies in KF and QF, respectively. "MidgutAll_lip.txt" contains the list of all MS2-detected precursor ions in midgut contents of all castes of all colonies. <br>
+&ensp;&ensp; First, open a Terminal.app on your mac (on Windows, use another suitable app) and set the directory to the "MS2-detected-lipid-lists" folder. Subsequently, run the shell scripts written in "UNIX-shell-script-(Lipids)" file to output new text files named "RFtoPK_lip.txt", "RFtoSQ_lip.txt", and "MidgutAll_lip.txt". <br> RFtoPK_lip.txt and RFtoSQ_lip.txt contain the list of MS2-detected precursor ions common among termite colonies in KF and QF, respectively. MidgutAll_lip.txt contains the list of all MS2-detected precursor ions in midgut contents of all castes of all colonies. <br>
 &ensp;&ensp; Perform the same operation for peptide ion candidates.
 
 <h4>STEP 2. Generate plots and heatmaps</h4>
-&ensp;&ensp; 
+&ensp;&ensp; Move (or copy and paste) these 3 files (RFtoPK_lip.txt, RFtoSQ_lip.txt, and MidgutAll_lip.txt) to a folder one level above. 
