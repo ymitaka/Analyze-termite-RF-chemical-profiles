@@ -3,7 +3,7 @@
 <h3>Introduction</h3>
 
 &ensp;&ensp; These text and R code files are used for automatically comparing lipid or peptide profiles, which were analyzed by using LC-MS/MS, between king food (KF) and queen food (QF) or among midgut contents of kings, queens, soldiers, and workers in the Japanese subterranean termite <i>Reticulitermes speratus</i>. <br>
-&ensp;&ensp; The .R files included in this repository not only outputs a Mean-EPI (Excess proportion index) plot comparing the intensity of each ion in royal foods between KF and QF, but also a heatmap comparing the intensity of ions detected in midgut contents between castes, which are used in our research article <b>(Eisuke et al. Under review)</b>. 
+&ensp;&ensp; The .R files included in this repository not only outputs a Mean-EPI (Excess proportion index) plot comparing the intensity of each ion in royal foods between KF and QF, but also a heatmap comparing the intensity of ions detected in midgut contents between castes, which are used in our research article <b>(Eisuke et al. 2023 PNAS Nexus DOI: <a href="https://doi.org/10.1093/pnasnexus/pgad222">10.1093/pnasnexus/pgad222</a>)</b>. 
 <br><br>
 
 <h3>Preparation in advance</h3>
